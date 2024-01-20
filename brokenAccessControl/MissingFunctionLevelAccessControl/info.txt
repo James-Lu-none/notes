@@ -1,0 +1,27 @@
+-Access control
+ex: XSS(cross site scripting), can be resolved by output encoding, which 
+transform data into a safe formate that does not interfere with the intended functionality or
+appearance of the web page
+
+IDOR vs missing function level access control
+IDOR: mostly horizontal or lateral access control issue
+MFLAC: exposes functionality
+
+-Relying on obscurity
+One could rely on HTML, CSS, or javascript
+to hide links that users don’t normally access.
+In the past, a network router tried to protect (hide) admin functionality with javascript in the UI
+https://www.wired.com/2009/10/routers-still-vulnerable'
+
+-DOM (document object model)
+connects web pages to scripts or programming languages by representing the structure of a document
+,simply says, it represents tje content of xml or html document as tree structure
+(html/xml is more like a string and DOM is the parser)
+is a programming interface, can be written in javaScript
+
+
+**in assignment 4, you should do a POST to /webGoat/access-control/users to add your account as
+a admin:
+add {"username":"your-webgoat-user", "password":"", "admin": "true"} in body
+
+and do GET to /webGoat/access-control/user-admin-fix to retrive the userHash
