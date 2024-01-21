@@ -1,0 +1,50 @@
+*Keywords
+Encoding
+Hashing
+Encryption
+Signing
+Keystores
+Security defaults
+Post quantum crypto
+
+Basic authentication is sometimes used by web applications.
+This uses base64 encoding. Therefore, it is important to at
+least use Transport Layer Security (TLS or more commonly known as https)
+to protect others from reading the username password that is sent to the server.
+
+A="4f7a3472506a302b4c446f7650697773"
+B="646174616261736570617373776f7264"
+86f7e437faa5a7fce15d1ddcb9eaeaea377667b8
+5EBE2294ECD0E0F08EAB7690D2A6EE69
+MD5
+0cc175b9c0f1b6a831c399e269772661
+SHA-256
+8F0E2F76E22B43E2855189877E7DC1E1E7D98C226C95DB247CD1D547928334A9
+
+xor encoding: https://www.101computing.net/xor-encryption-algorithm/
+
+Symmetric encryption: use same key
+Asymmetric encryption: use key pair (public/private)
+
+HTTPS uses both symmetric and asymmetric keys
+Here is a short description of what happens if you open your browser and go to an https site.
+
+1. Your browser connects to the server and gets the webserver certificate
+
+2. Your browser checks if it trusts the certificate issuer by checking if the issuer certificate is in its trust store.
+This trust store is managed by operating system and browser updates. And on some corporate networks it is managed by the company.
+From the certificate the browser obtains the public key.
+
+3. The browser now generates random bytes to be used to generate a symmetric key and encrypts this with the public key of the server.
+ So only the server can decrypt it.
+
+At the end of this process both the browser and the webserver will use the exchanged symmetric key (in the asymmetric key exchange process)
+ to encrypt and decrypt messages that are sent back and forth between the browser and the webserver.
+
+*Signature
+The signature can be supplied separately from the data that it validates, or in the case of CMS or SOAP can be included in the same file.
+
+Party-A "signs" the data by "calculating the hash of the data" and encrypting that hash using an asymmetric private key
+Party-B can then verify the data by calculating the hash of the data and decrypting the signature  to compare if both hashes are the same. (using public key)
+
+*rsa https://www.youtube.com/watch?v=D_PfV_IcUdA
