@@ -1,3 +1,8 @@
+@REM refer: 
+@REM https://www.openssl.org/docs/man1.0.2/man1/openssl-rsa.html
+@REM https://www.openssl.org/docs/man1.1.1/man1/openssl-dgst.html
+@REM https://www.zimuel.it/blog/sign-and-verify-a-file-using-openssl
+
 @REM generate rsa private key using provided string
 openssl rsa -in web.key > rsa.key
 
