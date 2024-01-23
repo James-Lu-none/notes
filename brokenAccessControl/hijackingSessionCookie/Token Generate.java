@@ -17,9 +17,9 @@ class Token_Generate
 {
     public static void main(String[] args)
     {
-        String file_locate = ".//tokens";
+        String file_locate = ".//brokenAccessControl//hijackingSessionCookie//tokens";
 
-        File name = new File(".//gen_token");
+        File name = new File(".//brokenAccessControl//hijackingSessionCookie//gen_token");
         try
         {
             ArrayList<String> tokens = Readfile(file_locate);
