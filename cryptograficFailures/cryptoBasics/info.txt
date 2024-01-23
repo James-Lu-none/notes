@@ -48,3 +48,5 @@ Party-A "signs" the data by "calculating the hash of the data" and encrypting th
 Party-B can then verify the data by calculating the hash of the data and decrypting the signature  to compare if both hashes are the same. (using public key)
 
 *rsa https://www.youtube.com/watch?v=D_PfV_IcUdA
+
+*crypto note: https://easonwang.gitbook.io/crypto/
