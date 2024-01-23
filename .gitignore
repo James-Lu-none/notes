@@ -2,3 +2,11 @@
 **/brokenAccessControl/hijackingSessionCookie/gen_token
 **/brokenAccessControl/hijackingSessionCookie/gen_cookies
 **/brokenAccessControl/hijackingSessionCookie/possibleCookie
+
+**/cryptograficFailures/cryptoBasics/rsa.key
+**/cryptograficFailures/cryptoBasics/web.key
+**/cryptograficFailures/cryptoBasics/_cipher.sha256
+**/cryptograficFailures/cryptoBasics/_cipher_B64
+**/cryptograficFailures/cryptoBasics/signature
+**/cryptograficFailures/cryptoBasics/rsa.pub
+**/cryptograficFailures/cryptoBasics/modulus.txt
