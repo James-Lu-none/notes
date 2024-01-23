@@ -1,0 +1,4 @@
+*main categories of SQL commands
+-Data Manipulation Language (DML)
+-Data Definition Language (DDL)
+-Data Control Language (DCL)
