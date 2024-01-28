@@ -30,3 +30,9 @@ which asks the database version and the type of the database and base on the dat
 
 -time-based SQL injection (when you are totally blind)
 article = 4; sleep(10) --
+
+-sqlmap
+cheatsheet: https://book.hacktricks.xyz/pentesting-web/sql-injection/sqlmap
+A python library that automate the sqli process, one can use --proxy [burp suite proxy] to intercept sqlmap request to the server
+
+**not finished**
