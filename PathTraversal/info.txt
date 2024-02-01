@@ -4,8 +4,8 @@ root/A/B/../ -> root/A/
 
 ../test
 ..'../'/test
-use interceptor
-use interceptor
+use interceptor and modify filename
+use interceptor and do ?id=
 
 -Zip Slip vulnerability
 path traversal can be used while extracting files. You might be able to overwrite the ls command while extracting a zip file.
