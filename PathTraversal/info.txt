@@ -1,0 +1,23 @@
+-Path traversal (dot-dot-slash attack)
+A path(directory) traversal is a vulnerability where an attacker can access or store files and directories outside the application’s location, by using "../" to walk up the to the root directories.
+root/A/B/../ -> root/A/
+
+../test
+..'../'/test
+use interceptor
+use interceptor
+
+-Zip Slip vulnerability
+path traversal can be used while extracting files. You might be able to overwrite the ls command while extracting a zip file.
+
+for a java zipping code like this:
+File destinationDir = new File("/tmp/zip");
+Enumeration<? extends ZipEntry> entries = zip.entries();
+while (entries.hasMoreElements()) {
+  ZipEntry e = entries.nextElement();
+  File f = new File(destinationDir, e.getName());
+  InputStream is = zip.getInputStream(e);
+  IOUtils.copy(is, write(f));
+}
+
+it is vulnerable to path traversal server receive a zip file with something like ../../../../../../../tmp/hack.sh, the file will be saved in /tmp/hack.sh instead of /tmp/zip/hack.sh
