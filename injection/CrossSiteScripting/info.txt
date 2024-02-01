@@ -1,0 +1,19 @@
+*Cross site scripting (XSS)
+While there is a simple well-known defense for this attack, there are still many instances on the web, which is hard to fix in terms of coverage.
+
+-Reflected
+>Malicious content from a user request is displayed to the user in a web browser
+>Malicious content is written into the page after from server response
+>Social engineering is required
+>Runs with browser privileges inherited from the user in a browser
+
+-DOM-based (Document Object Model)
+>Client-side scripts use malicious content from a user request to write HTML to its page
+>Similar to reflected XSS
+>Runs with browser privileges inherited from the user in a browser
+
+in the MVC architecture, you can find the base router in the source 
+
+http://127.0.0.1:8080/WebGoat/start.mvc#test/%3Cscript%3Ewebgoat.customjs.phoneHome()%3C%2Fscript%3E
+
+question_0_solution=Solution%204&question_1_solution=Solution%203&question_2_solution=Solution%201&question_3_solution=Solution%202&question_4_solution=Solution%204
