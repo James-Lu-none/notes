@@ -1,0 +1,48 @@
+Linux Directories Explained in 100 Seconds
+https://www.youtube.com/watch?v=42iQKuQodW4
+
+/bin "Binaries":
+essential executables
+
+/sbin "System Binaries":
+essential executables for super user (root)
+
+/lib "Libraries":
+store Binaries (essential executables) for both executions Binaries in /bin & /sbin, which means it contains common libraries.
+
+/usr "User":
+/usr/bin and /usr/sbin for its own and is not essential to the OS and intended for the end user
+
+/usr/local/bin contains Binaries that user complies manually
+
+and similar to windows, linux has PATH to tell linux where to find executables, and the one can get the path dirs using "echo $PATH".
+And for getting the full path in the file system for a binary, use "which [binary name]"
+
+/etc ET CETERA "Editable Text Config":
+one can customize the behavioe of the software no the system. many files in this directories has .conf(text based config file) and one can modify them in the editor (nano, vim)
+
+/home:
+linux support multiple users and home lists all the user with sub directories named with user names and contains user files and configurations, one needs to login as that user or as a root user to modify things in it.
+
+/boot:
+contains files that is needed to boot the system ex: linux kernel
+
+/dev: "device files"
+interact with hardware or drivers as if they were reguler files
+like create disk partitions, or interact to the floppy drive
+
+/opt: "optional" or "add-on software"
+rarely interact with it
+
+/var: "variable"
+contains variable files that will changes as the operating system is being used, like logs or cache files
+
+/tmp: "temporary"
+contains temporary files that won't be persisted between reboots
+
+/proc:
+an illusionary file system that doesnt actually exist on the disk but is created in the memory no the fly by linux kernel to keep track of the running processes
+
+
+
+
