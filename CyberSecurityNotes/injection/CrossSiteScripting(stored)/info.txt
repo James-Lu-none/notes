@@ -1,0 +1,8 @@
+
+-Stored or persistent XSS
+Malicious content is stored on the server
+
+1. Attacker posts malicious script to a message board
+2. Message is stored in a server database
+3. Victim reads the message
+4. The malicious script embedded in the message board post executes in the victim’s browser

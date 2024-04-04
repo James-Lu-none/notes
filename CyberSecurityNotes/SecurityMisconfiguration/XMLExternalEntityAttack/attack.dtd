@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY ping SYSTEM '
+    <a href="http://127.0.0.1:9090/WebWolf/landing" target="_blank" rel="noopener">
+        <a href="http://127.0.0.1:9090/WebWolf/landing" class="bare">
+            http://127.0.0.1:9090/WebWolf/landing
+        </a>
+    </a>
+'>

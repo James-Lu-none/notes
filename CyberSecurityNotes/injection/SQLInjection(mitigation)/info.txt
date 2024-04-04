@@ -1,0 +1,52 @@
+-Immutable Queries
+*Parameterized
+-> use 
+PreparedStatement statement = conn.prepareStatement("INSERT INTO USERS (id, name, email) VALUES (?, ?, ?)");
+statement.setString(1, "1");
+statement.setString(2, "webgoat");
+statement.setString(3, "webgoat@owasp.org");
+statement.executeUpdate();
+-> instead of
+String insertStatement = "INSERT INTO USERS (id, name, email) VALUES (%s, %s, %s)".format("1", "webgoat", "webgoat@owasp.org");
+PreparedStatement statement = conn.prepareStatement(insertStatement);
+statement.executeUpdate();
+-> so we can handle each parameter with separate validation logic, like this: 
+public static bool isUsernameValid(string username) {
+    RegEx r = new Regex("^[A-Za-z0-9]{16}$");
+    return r.isMatch(username);
+}
+
+// java.sql.Connection conn is set elsewhere for brevity.
+PreparedStatement ps = null;
+RecordSet rs = null;
+try {
+    pUserName = request.getParameter("UserName");
+    if ( isUsernameValid (pUsername) ) {
+        ps = conn.prepareStatement("SELECT * FROM user_table WHERE username = ? ");
+        ps.setString(1, pUsername);
+        rs = ps.execute();
+        if ( rs.next() ) {
+            // do the work of making the user record active in some way
+        }
+    } else {
+        // handle invalid input
+    }
+}
+catch (...) { // handle all exceptions ... }
+
+
+**in the assignment 6, the compiler is null because it tries to use JDK functionality which is not included in the JRE. While this is good practice for a secure application since it limits the attack surface, so we can replace the jre using docker.io/eclipse-temurin:19-jdk-focal and rebuild the image again.(https://github.com/WebGoat/WebGoat/issues/1544)
+
+**Input validation alone is not enough!!
+the dev tried to fix the sql vulnerability by filtering out inputs with space character in it, but this can be simply break by using replacing space character with "/**/", which is a comment in sql statement
+->a';/**/select/**/*/**/from/**/user_system_data/**/where/**/'1'='1';--
+== a'; select * from user_system_data where '1'='1';--
+
+in the assignment 10, it also filters out the word "select" and "from" so we can split the word in pieces using keyword to get away from the filtering logics
+->a';/**/selselectect/**/*/**/frofromm/**/user_system_data/**/where/**/'1'='1';--
+
+**Does a prepared statement always prevent against an SQL injection?
+in the following statement: 
+"SELECT * FROM users ORDER BY " + sortColumName + ";"
+we can replace sortColumName with (CASE WHEN (TRUE) THEN lastname ELSE firstname)
+and then we can ask Any question in the WHEN statement and observe the order to see if the answer is true or false.

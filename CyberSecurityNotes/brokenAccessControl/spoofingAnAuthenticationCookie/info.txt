@@ -1,0 +1,22 @@
+The authentication cookie is usually stored on both the client and server sides.
+
+On one hand, storing the cookie on the client side means it can be susceptible
+to theft through exploiting certain vulnerabilities or interception via man-in-the-middle attacks
+or XSS. 
+On the other hand, the cookie values can be guessed if the algorithm used to generate the cookie 
+is obtained.
+
+
+the cookie might take the username or password and encoding with salt 
+origin=> NTI0NDRhNGM2MTVhNjQ2ZTc4NTY2ZTY5NmQ2NDYx
+base64 decode => 52 44 4a 4c 61 5a 64 6e 78 56 6e 69 6d 64 61 (this is in hex)
+ascii code(hex) to text => RDJLaZdnxVnimda
+
+NTI0NDRhNGM2MTVhNjQ2ZTc4NTY3NDYxNmY2NzYyNjU3Nw==
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAd2ViZ29hdA==
+
+119
+65
+
+78
+100

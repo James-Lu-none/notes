@@ -1,0 +1,28 @@
+-XSS defense
+1. output encoding
+The basic premise of defending against XSS is output encoding any untrusted input to the screen.
+Encode the data
+-as HTML Entities in HTML Body
+-as HTML Entities in HTML Attribute
+-for JavaScript if outputting user input to JavaScript
+Client-side validation cannot be relied upon, but user input can be forced down to a minimal alphanumeric set with server-side processing
+
+-Escape string
+< &lt;
+> &gt;
+" &quot;
+' &#x27;
+& &amp;
+/ &#x2F;
+
+resources:
+Java OWASP Encoder:
+https://www.owasp.org/index.php/OWASP_Java_Encoder_Project
+General XSS prevention Cheat Sheet:
+https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
+DOM XSS Prevention Cheat Sheet:
+https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html
+XSS Filter Evasion:
+https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
+
+

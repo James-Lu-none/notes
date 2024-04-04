@@ -1,0 +1,31 @@
+
+*XML entity
+https://www.w3resource.com/xml/internal-entities.php
+-internal entities
+-external entities
+-parameter entities
+An entity must be created in the Document Type Definition (DTD)
+
+
+-XXE (XML External Entity attack)
+An XML External Entity attack is a type of attack against an application that parses XML input.  This attack occurs when XML input containing a "reference to an external entity" is processed by a weakly configured XML parser.
+XXE may lead to
+*disclosure of confidential data
+*denial of service
+*server side request forgery
+*port scanning from the perspective of the machine where the parser is located
+
+In general we can distinguish the following kind of XXE attacks:
+
+-Classic: in this case an external entity is included in a local DTD
+-Blind: no output and or errors are shown in the response
+-Error: try to get the content of a resource in the error message
+
+-Find XXE in code review
+in the Jackson xml parser library, you can see that the XMLInputFactory instance support DTD (XXE) and external entities expansion (XXE DOS) by default, which is vulnerable to XXE attacks, so we can create the XMLInputFactory instance with default properties that set false to DTD and external entities expansion support.
+
+-XXE DOS attack (if external entities expansion is not disabled)
+https://en.wikipedia.org/wiki/Billion_laughs
+
+-Blind XXE
+we can use a server and host a file to perform XXE if we can't see any reflect on the page

