@@ -7,3 +7,9 @@ deploys a light weight readonly agent onto kubernetes clusters, getting
 - savings report
 - Cost monitoring
 - Security report
+
+- SynapseAI: Introduction
+- Enterprise Focused AI Stack
+- Release Highlights
+- Advanced Development
+- Developer Resources

@@ -1,4 +1,3 @@
-
 - features
   - 1 Automatic bin packing
     - packaging jobs (containers) in bins (servers) in the most efficient way

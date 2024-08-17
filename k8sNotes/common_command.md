@@ -44,4 +44,28 @@ kubectl delete pod [node/pod/service] <name> -n <namespace>
 kubeadm token create --print-join-command
 kubeadm token list
 
+## get resources in kubernetes cluster
+
+It lists:
+
+```bash
+kubectl get all -A
+```
+
+- Pods: Lists all pods running in all namespaces.
+- Services: Displays all services across the namespaces.
+- Deployments: Shows all deployments in all namespaces.
+- ReplicaSets: Lists all ReplicaSets.
+- StatefulSets: Displays all StatefulSets.
+- DaemonSets: Lists all DaemonSets.
+- Jobs: Shows all jobs that are running or completed.
+- CronJobs: Lists all CronJobs (scheduled jobs).
+- ReplicationControllers: Displays all ReplicationControllers in the cluster.
+
+## get Custom Resource Definitions (CRDs)
+
+```bash
+kubectl get crds
+```
+
 [cheat sheet](https://intellipaat.com/blog/tutorial/devops-tutorial/kubernetes-cheat-sheet/)
