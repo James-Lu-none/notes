@@ -1,0 +1,190 @@
+ERROR:root:Failed to get healthz info attempt 1 of 5.
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/kfp/client/client.py", line 424, in get_kfp_healthz
+    return self._healthz_api.get_healthz()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 63, in get_healthz
+    return self.get_healthz_with_http_info(**kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 134, in get_healthz_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 364, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 188, in__call_api
+    raise e
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 181, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 389, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 230, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 224, in request
+    raise ApiException(http_resp=r)
+kfp_server_api.exceptions.ApiException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'www-authenticate': 'Bearer realm="<http://ml-pipeline.kubeflow.svc.cluster.local:8888/apis/v2beta1/healthz>", error="invalid_token"', 'content-length': '28', 'content-type': 'text/plain', 'date': 'Wed, 14 Aug 2024 06:40:06 GMT', 'server': 'envoy', 'x-envoy-upstream-service-time': '0'})
+HTTP response body: Jwt issuer is not configured
+
+ERROR:root:Failed to get healthz info attempt 2 of 5.
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/kfp/client/client.py", line 424, in get_kfp_healthz
+    return self._healthz_api.get_healthz()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 63, in get_healthz
+    return self.get_healthz_with_http_info(**kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 134, in get_healthz_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 364, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 188, in__call_api
+    raise e
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 181, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 389, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 230, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 224, in request
+    raise ApiException(http_resp=r)
+kfp_server_api.exceptions.ApiException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'www-authenticate': 'Bearer realm="<http://ml-pipeline.kubeflow.svc.cluster.local:8888/apis/v2beta1/healthz>", error="invalid_token"', 'content-length': '28', 'content-type': 'text/plain', 'date': 'Wed, 14 Aug 2024 06:40:11 GMT', 'server': 'envoy', 'x-envoy-upstream-service-time': '1'})
+HTTP response body: Jwt issuer is not configured
+
+ERROR:root:Failed to get healthz info attempt 3 of 5.
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/kfp/client/client.py", line 424, in get_kfp_healthz
+    return self._healthz_api.get_healthz()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 63, in get_healthz
+    return self.get_healthz_with_http_info(**kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 134, in get_healthz_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 364, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 188, in__call_api
+    raise e
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 181, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 389, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 230, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 224, in request
+    raise ApiException(http_resp=r)
+kfp_server_api.exceptions.ApiException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'www-authenticate': 'Bearer realm="<http://ml-pipeline.kubeflow.svc.cluster.local:8888/apis/v2beta1/healthz>", error="invalid_token"', 'content-length': '28', 'content-type': 'text/plain', 'date': 'Wed, 14 Aug 2024 06:40:16 GMT', 'server': 'envoy', 'x-envoy-upstream-service-time': '1'})
+HTTP response body: Jwt issuer is not configured
+
+ERROR:root:Failed to get healthz info attempt 4 of 5.
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/kfp/client/client.py", line 424, in get_kfp_healthz
+    return self._healthz_api.get_healthz()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 63, in get_healthz
+    return self.get_healthz_with_http_info(**kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 134, in get_healthz_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 364, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 188, in__call_api
+    raise e
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 181, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 389, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 230, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 224, in request
+    raise ApiException(http_resp=r)
+kfp_server_api.exceptions.ApiException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'www-authenticate': 'Bearer realm="<http://ml-pipeline.kubeflow.svc.cluster.local:8888/apis/v2beta1/healthz>", error="invalid_token"', 'content-length': '28', 'content-type': 'text/plain', 'date': 'Wed, 14 Aug 2024 06:40:21 GMT', 'server': 'envoy', 'x-envoy-upstream-service-time': '1'})
+HTTP response body: Jwt issuer is not configured
+
+ERROR:root:Failed to get healthz info attempt 5 of 5.
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/site-packages/kfp/client/client.py", line 424, in get_kfp_healthz
+    return self._healthz_api.get_healthz()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 63, in get_healthz
+    return self.get_healthz_with_http_info(**kwargs)  # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api/healthz_service_api.py", line 134, in get_healthz_with_http_info
+    return self.api_client.call_api(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 364, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 188, in__call_api
+    raise e
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 181, in __call_api
+    response_data = self.request(
+                    ^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/api_client.py", line 389, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 230, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/kfp_server_api/rest.py", line 224, in request
+    raise ApiException(http_resp=r)
+kfp_server_api.exceptions.ApiException: (401)
+Reason: Unauthorized
+HTTP response headers: HTTPHeaderDict({'www-authenticate': 'Bearer realm="<http://ml-pipeline.kubeflow.svc.cluster.local:8888/apis/v2beta1/healthz>", error="invalid_token"', 'content-length': '28', 'content-type': 'text/plain', 'date': 'Wed, 14 Aug 2024 06:40:26 GMT', 'server': 'envoy', 'x-envoy-upstream-service-time': '0'})
+HTTP response body: Jwt issuer is not configured
+
+---------------------------------------------------------------------------
+TimeoutError                              Traceback (most recent call last)
+Cell In[3], line 360
+    356     step4.after(step3)
+    359 if __name__ == "__main__":
+--> 360     client = kfp.Client()
+    362     arguments = {
+    363         "no_epochs" : 1,
+    364         "optimizer": "adam"
+    365     }
+    367     run_directly = 1
+
+File /opt/conda/lib/python3.11/site-packages/kfp/client/client.py:204, in Client.__init__(self, host, client_id, namespace, other_client_id, other_client_secret, existing_token, cookies, proxy, ssl_ca_cert, kube_context, credentials, ui_host, verify_ssl)
+    202 self._upload_api = kfp_server_api.PipelineUploadServiceApi(api_client)
+    203 self._healthz_api = kfp_server_api.HealthzServiceApi(api_client)
+--> 204 if not self._context_setting['namespace'] and self.get_kfp_healthz(
+    205 ).multi_user is True:
+    206     try:
+    207         with open(Client._NAMESPACE_PATH, 'r') as f:
+
+File /opt/conda/lib/python3.11/site-packages/kfp/client/client.py:419, in Client.get_kfp_healthz(self, sleep_duration)
+    417 count += 1
+    418 if count > max_attempts:
+--> 419     raise TimeoutError(
+    420         f'Failed getting healthz endpoint after {max_attempts} attempts.'
+    421     )
+    423 try:
+    424     return self._healthz_api.get_healthz()
+
+TimeoutError: Failed getting healthz endpoint after 5 attempts.

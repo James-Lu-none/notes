@@ -68,4 +68,14 @@ kubectl get all -A
 kubectl get crds
 ```
 
+## port forwarding
+
+```bash
+# get service names
+kubectl get service -A
+
+# port-forward service
+kubectl port-forward svc/[service name] -n [namespace] [host port]:[container port]
+```
+
 [cheat sheet](https://intellipaat.com/blog/tutorial/devops-tutorial/kubernetes-cheat-sheet/)
