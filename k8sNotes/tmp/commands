@@ -1,0 +1,30 @@
+
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 \
+--upload-certs \
+--kubernetes-version=v1.29.8 \
+--control-plane-endpoint=192.168.1.101:6443 \
+--cri-socket=/run/containerd/containerd.sock
+sudo mkdir -p $HOME/.kube/
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+export KUBECONFIG=~/.kube/config
+kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+sh scripts/volume.sh
+sh scripts/argo.sh
+kubectl port-forward --address=192.168.1.101 svc/argocd-server -n argocd 9000:443 & \
+kubectl port-forward --address=192.168.1.101 svc/istio-ingressgateway -n istio-system 9001:80
+kubectl port-forward --address=192.168.1.101 svc/jupyter-web-app-service -n kubeflow 9002:80
+
+
+sudo rm -rf /home/james/workspace/temp/t0/* /home/james/workspace/temp/t1/* /home/james/workspace/temp/t2/*
+
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
+
+journalctl -xe --no-pager -u kubelet
+journalctl -xe --no-pager -u containerd
+
+
+
+192.168.1.100
+192.168.1.101
