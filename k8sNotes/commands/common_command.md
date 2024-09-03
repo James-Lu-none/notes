@@ -39,6 +39,12 @@ kubectl delete [nodes/pods/services] --all -n <namespace>
 kubectl delete pod [node/pod/service] <name> -n <namespace>
 ```
 
+## get log
+
+```bash
+kubectl logs -f [daemonsets/jobs/replicasets/services/deployments/pods/replicationcontrollers/statefulsets] -n [namespace]
+```
+
 ## print join command
 
 kubeadm token create --print-join-command
