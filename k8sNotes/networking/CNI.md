@@ -30,3 +30,6 @@ Warning  FailedCreatePodSandBox  21s                kubelet            Failed to
 ```
 
 and there's nothing under /etc/cni/net.d/, and somehow execute the entrypoint script in branch `v1.0.0` once will solve the issue (pending recreate method and resolve methods)
+
+[flannel](https://www.luozhiyun.com/archives/695)
+[flannel-alt](https://lotabout.me/2022/Flannel-Verification/)
