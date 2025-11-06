@@ -2,16 +2,14 @@
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16 \
 --upload-certs \
 --kubernetes-version=v1.29.8 \
---control-plane-endpoint=192.168.1.101:6443 \
+--control-plane-endpoint=192.168.1.100:6443 \
 --cri-socket=/run/containerd/containerd.sock
 sudo mkdir -p $HOME/.kube/
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=~/.kube/config
-kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
-sh scripts/volume.sh
-sh scripts/argo.sh
-kubectl port-forward --address=192.168.1.101 svc/argocd-server -n argocd 9000:443 & \
+
+kubectl port-forward --address=pi5 svc/argocd-server -n argocd 9000:443
 kubectl port-forward --address=192.168.1.101 svc/istio-ingressgateway -n istio-system 9001:80
 kubectl port-forward --address=192.168.1.101 svc/jupyter-web-app-service -n kubeflow 9002:80
 
@@ -28,3 +26,8 @@ journalctl -xe --no-pager -u containerd
 
 192.168.1.100
 192.168.1.101
+
+
+kubeflow                    service/ml-pipeline                                                 ClusterIP   10.99.221.193    <none>        8888/TCP,8887/TCP                         104m
+kubeflow                    service/ml-pipeline-ui                                              ClusterIP   10.109.62.146    <none>        80/TCP                                    104m
+kubeflow                    service/ml-pipeline-visualizationserver                             ClusterIP   10.101.247.133   <none>        8888/TCP                                  104m
